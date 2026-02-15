@@ -25,7 +25,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(115,188,213,.4)}50%{box-shadow:0 0 0 12px rgba(115,188,213,0)}}
 .anim{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
 .anim.visible{opacity:1;transform:translateY(0)}
-
 /* ═══ TOPBAR ═══ */
 .topbar{background:var(--bg-dark);color:var(--text-muted);font-size:.75rem;padding:8px 0;letter-spacing:.03em}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
@@ -33,7 +32,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .topbar a:hover{text-decoration:underline}
 .topbar-left,.topbar-right{display:flex;align-items:center;gap:16px}
 .topbar-right .badge{background:rgba(115,188,213,.12);color:var(--accent);padding:3px 10px;border-radius:20px;font-weight:600;font-size:.7rem}
-
 /* ═══ NAVBAR ═══ */
 .navbar{position:sticky;top:0;z-index:1000;background:rgba(20,20,19,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-light);transition:box-shadow .3s}
 .navbar.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.3)}
@@ -52,7 +50,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-
 /* ═══ HERO ═══ */
 .hero{background:var(--bg-dark);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(115,188,213,.06) 0%,transparent 70%);pointer-events:none}
@@ -78,19 +75,16 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .hero-stat .number{font-size:2.4rem;font-weight:900;color:var(--accent);display:block;line-height:1;margin-bottom:8px}
 .hero-stat .label{font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:500}
 .hero-floating-badge{position:absolute;bottom:-20px;right:-10px;background:var(--accent);color:var(--bg-dark);padding:14px 22px;border-radius:var(--r);font-weight:800;font-size:.85rem;box-shadow:0 8px 24px rgba(115,188,213,.3);animation:float 3s ease-in-out infinite}
-
 /* ═══ TRUST BAR ═══ */
 .trust-bar{background:var(--bg-dark);border-top:1px solid var(--border-light);padding:40px 0;position:relative;z-index:2}
 .trust-items{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
 .trust-item{display:flex;align-items:center;gap:12px;color:var(--text-muted);font-size:.82rem;font-weight:500}
 .trust-item svg{width:20px;height:20px;color:var(--accent);flex-shrink:0}
-
 /* ═══ SECTION HEADER ═══ */
 .section-header{text-align:center;margin-bottom:64px}
 .section-label{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);margin-bottom:16px}
 .section-title{font-size:2.6rem;font-weight:800;margin-bottom:16px;letter-spacing:-.02em}
 .section-subtitle{color:var(--text-muted-dark);font-size:1.05rem;max-width:560px;margin:0 auto;line-height:1.7}
-
 /* ═══ SERVICES ═══ */
 #ydelser{background:var(--bg-light)}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -104,17 +98,23 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .service-card p{color:var(--text-muted-dark);font-size:.92rem;line-height:1.7;margin-bottom:20px}
 .service-link{color:var(--accent);font-weight:600;font-size:.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap .3s}
 .service-link:hover{gap:12px}
-
-/* ═══ PACKAGES ═══ */
+/* ═══ PACKAGES - IMPROVED WITH CLICK SELECTION ═══ */
 #pakker{background:var(--bg-dark)}
 #pakker .section-title,#booking .section-title,#fordele .section-title{color:var(--text-light)}
 #pakker .section-subtitle,#booking .section-subtitle,#fordele .section-subtitle{color:var(--text-muted)}
 .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.package-card{background:var(--bg-dark-alt);border:1px solid var(--border-light);border-radius:var(--rl);padding:40px 32px;position:relative;transition:all .4s;display:flex;flex-direction:column}
+.package-card{background:var(--bg-dark-alt);border:1px solid var(--border-light);border-radius:var(--rl);padding:40px 32px;position:relative;transition:all .4s;display:flex;flex-direction:column;cursor:pointer;user-select:none}
 .package-card:hover{border-color:rgba(115,188,213,.3);transform:translateY(-4px)}
+/* NEW: Selected state */
+.package-card.selected{
+  border-color:var(--accent);
+  background:linear-gradient(180deg,rgba(115,188,213,.12) 0%,rgba(115,188,213,.04) 100%);
+  box-shadow:0 0 0 3px rgba(115,188,213,.2);
+}
+.package-card.selected .package-name{color:var(--accent);text-shadow:0 0 20px rgba(115,188,213,.4)}
 .package-card.featured{border-color:var(--accent);background:linear-gradient(180deg,rgba(115,188,213,.06) 0%,var(--bg-dark-alt) 100%)}
 .package-card.featured::before{content:'Mest populær';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--bg-dark);padding:6px 20px;border-radius:0 0 10px 10px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.package-name{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:12px}
+.package-name{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:12px;transition:all .3s}
 .package-title{font-size:1.5rem;font-weight:800;color:var(--text-light);margin-bottom:8px}
 .package-desc{color:var(--text-muted);font-size:.88rem;line-height:1.6;margin-bottom:28px}
 .package-features{list-style:none;margin-bottom:32px;flex:1}
@@ -122,7 +122,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .package-features li:last-child{border:none}
 .package-features li svg{width:16px;height:16px;color:var(--accent);flex-shrink:0;margin-top:2px}
 .package-btn{width:100%;text-align:center;justify-content:center}
-
 /* ═══ FORMS ═══ */
 .form-group{margin-bottom:24px}
 .form-group label{display:block;font-size:.82rem;font-weight:600;margin-bottom:8px}
@@ -135,7 +134,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .checkbox-group label:hover{border-color:var(--accent)}
 .checkbox-group input{display:none}
 .checkbox-group label.checked{border-color:var(--accent);background:var(--accent-glow)}
-
 /* ═══ PRICE CALC ═══ */
 #prisberegner{background:var(--bg-light)}
 .calc-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
@@ -153,7 +151,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .result-total .amount small{font-size:.7rem;font-weight:400;color:var(--text-muted)}
 .result-note{font-size:.78rem;color:var(--text-muted);line-height:1.6;margin-bottom:24px;padding:14px;background:rgba(255,255,255,.03);border-radius:8px;border-left:3px solid var(--accent)}
 .result-note strong{color:var(--accent)}
-
 /* ═══ USPs ═══ */
 #fordele{background:var(--bg-dark)}
 .usp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -163,7 +160,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .usp-icon svg{width:28px;height:28px;color:var(--accent)}
 .usp-card h3{font-size:1.05rem;font-weight:700;color:var(--text-light);margin-bottom:10px}
 .usp-card p{color:var(--text-muted);font-size:.85rem;line-height:1.6}
-
 /* ═══ TAX DEDUCTION ═══ */
 #servicefradrag{background:linear-gradient(135deg,rgba(115,188,213,.08) 0%,var(--bg-light) 50%,rgba(115,188,213,.05) 100%)}
 .tax-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -181,7 +177,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .tax-savings{text-align:center;padding-top:20px;border-top:1px solid var(--border-light);margin-top:20px}
 .tax-savings .amount{font-size:1.8rem;font-weight:900;color:#4ecb71}
 .tax-savings .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}
-
 /* ═══ TESTIMONIALS ═══ */
 #anmeldelser{background:var(--bg-light-alt)}
 .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -197,7 +192,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .trustpilot-bar .rating{font-size:2.2rem;font-weight:900}
 .trustpilot-bar .rating-label{color:var(--text-muted-dark);font-size:.85rem;margin-top:4px}
 .tp-stars{color:#00b67a;font-size:1.4rem;letter-spacing:3px;margin-bottom:8px}
-
 /* ═══ BOOKING ═══ */
 #booking{background:var(--bg-dark)}
 .booking-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:48px}
@@ -218,7 +212,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .step-number{width:40px;height:40px;background:var(--accent-glow);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:.9rem;flex-shrink:0}
 .step-content h4{font-weight:600;font-size:.95rem;margin-bottom:4px}
 .step-content p{font-size:.82rem;color:var(--text-muted);line-height:1.5}
-
 /* ═══ FAQ ═══ */
 #faq{background:var(--bg-light)}
 .faq-grid{max-width:800px;margin:0 auto}
@@ -230,7 +223,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
 .faq-item.active .faq-answer{max-height:300px}
 .faq-answer p{padding:0 24px 20px;font-size:.88rem;color:var(--text-muted-dark);line-height:1.7}
-
 /* ═══ MAP ═══ */
 #omraade{background:var(--bg-light-alt)}
 .map-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
@@ -241,7 +233,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .area-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none}
 .area-list li{display:flex;align-items:center;gap:8px;font-size:.85rem;padding:6px 0}
 .area-list li svg{width:14px;height:14px;color:var(--accent);flex-shrink:0}
-
 /* ═══ CONTACT ═══ */
 #kontakt{background:var(--bg-dark)}
 #kontakt .section-title{color:var(--text-light)}
@@ -256,7 +247,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .contact-card p{font-size:.85rem;color:var(--text-muted);line-height:1.5}
 .contact-card a{color:var(--accent);text-decoration:none}
 .contact-card a:hover{text-decoration:underline}
-
 /* ═══ FOOTER ═══ */
 .footer{background:var(--bg-dark);border-top:1px solid var(--border-light);padding:60px 0 30px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
@@ -271,7 +261,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .footer-bottom p{color:var(--text-muted);font-size:.78rem}
 .footer-eco{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:.78rem}
 .footer-eco svg{width:16px;height:16px;color:#4ecb71}
-
 /* ═══ CHAT ═══ */
 .chat-widget{position:fixed;bottom:28px;right:28px;z-index:9999}
 .chat-toggle{width:60px;height:60px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(115,188,213,.4);transition:transform .3s;position:relative}
@@ -301,7 +290,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .chat-send{width:38px;height:38px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s;flex-shrink:0}
 .chat-send:hover{background:var(--accent-dark)}
 .chat-send svg{width:18px;height:18px;color:var(--bg-dark)}
-
 /* ═══ MISC ═══ */
 .back-to-top{position:fixed;bottom:100px;right:32px;width:44px;height:44px;border-radius:50%;background:var(--bg-dark);border:1px solid var(--border-light);color:var(--text-light);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:998;transition:all .3s}
 .back-to-top.visible{display:flex}
@@ -309,36 +297,100 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .back-to-top svg{width:20px;height:20px}
 .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg-dark);color:var(--text-light);padding:16px 28px;border-radius:var(--r);font-size:.88rem;font-weight:500;box-shadow:0 8px 32px rgba(0,0,0,.3);z-index:10000;opacity:0;transition:all .4s;pointer-events:none;border-left:4px solid var(--accent)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-/* ═══ RESPONSIVE ═══ */
+/* ═══ RESPONSIVE - IMPROVED MOBILE ═══ */
 @media(max-width:1024px){
   .hero .container{grid-template-columns:1fr;gap:40px}
   .hero h1{font-size:2.8rem}
   .services-grid,.packages-grid,.testimonials-grid,.usp-grid{grid-template-columns:1fr 1fr}
   .calc-wrapper,.tax-content,.booking-wrapper,.map-wrapper,.contact-grid{grid-template-columns:1fr}
+  .calc-result{position:relative;top:0}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  .section-pad{padding:70px 0}
-  .section-title{font-size:2rem}
+  .section-pad{padding:60px 0}
+  .section-title{font-size:1.8rem}
+  .section-subtitle{font-size:.95rem}
+  .container{padding:0 20px}
+  
+  /* Topbar mobile */
+  .topbar{font-size:.7rem;padding:6px 0}
+  .topbar .container{gap:6px}
+  .topbar-left,.topbar-right{gap:12px}
   .topbar-right{display:none}
+  
+  /* Nav mobile */
+  .navbar .container{height:64px}
+  .logo{font-size:1.3rem}
   .nav-links{display:none}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(20,20,19,.98);padding:24px;gap:20px;border-bottom:1px solid var(--border-light)}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(20,20,19,.98);padding:24px;gap:20px;border-bottom:1px solid var(--border-light)}
   .hamburger{display:flex}
-  .hero{min-height:80vh}
-  .hero h1{font-size:2.2rem}
-  .hero-floating-badge{position:relative;bottom:0;right:0;display:inline-block;margin-top:16px}
-  .services-grid,.packages-grid,.testimonials-grid,.usp-grid{grid-template-columns:1fr}
+  
+  /* Hero mobile */
+  .hero{min-height:auto;padding:60px 0}
+  .hero h1{font-size:2rem;line-height:1.15}
+  .hero p{font-size:1rem;margin-bottom:28px}
+  .hero-buttons{flex-direction:column;width:100%}
+  .hero-buttons .btn{width:100%;justify-content:center}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:16px}
+  .hero-stat{padding:16px}
+  .hero-stat .number{font-size:1.8rem}
+  .hero-stat .label{font-size:.7rem}
+  .hero-floating-badge{position:relative;bottom:0;right:0;display:inline-block;margin-top:16px;font-size:.8rem;padding:12px 18px}
+  
+  /* Trust bar mobile */
+  .trust-bar{padding:28px 0}
+  .trust-items{gap:24px;justify-content:flex-start}
+  .trust-item{font-size:.75rem}
+  .trust-item svg{width:16px;height:16px}
+  
+  /* Grids mobile */
+  .services-grid,.packages-grid,.testimonials-grid,.usp-grid{grid-template-columns:1fr;gap:20px}
+  
+  /* Package cards mobile - important for your highlight feature */
+  .package-card{padding:32px 24px}
+  .package-card.featured::before{font-size:.68rem;padding:5px 16px}
+  
+  /* Forms mobile */
   .form-row{grid-template-columns:1fr}
+  .calc-form,.booking-form,.contact-form{padding:28px 20px}
+  .calc-result{padding:28px 20px}
+  
+  /* Tax visual mobile */
+  .tax-visual{padding:28px 20px}
+  .tax-highlight .big-number{font-size:2.2rem}
+  
+  /* Testimonials mobile */
+  .testimonial-card{padding:24px 20px}
+  
+  /* Map mobile */
+  .map-container{height:300px}
+  .area-list{grid-template-columns:1fr}
+  
+  /* Footer mobile */
+  .footer{padding:40px 0 24px}
   .footer-grid{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;text-align:center}
-  .area-list{grid-template-columns:1fr}
-  .chat-window{width:calc(100vw - 32px);right:-12px}
+  
+  /* Chat mobile */
+  .chat-window{width:calc(100vw - 32px);height:calc(100vh - 120px);max-height:600px;right:-12px}
+  .chat-toggle{width:54px;height:54px;bottom:20px;right:20px}
+  .chat-toggle svg{width:22px;height:22px}
+  
+  /* Back to top mobile */
+  .back-to-top{bottom:85px;right:20px;width:40px;height:40px}
+}
+
+@media(max-width:480px){
+  .hero h1{font-size:1.7rem}
+  .section-title{font-size:1.6rem}
+  .hero-stats{grid-template-columns:1fr;gap:12px}
+  .package-card{padding:24px 18px}
+  .service-card{padding:28px 20px}
+  .usp-card{padding:24px 18px}
 }
 </style>
 </head>
 <body>
-
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="container">
@@ -352,7 +404,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </div>
-
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="container">
@@ -369,7 +420,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="container">
@@ -398,7 +448,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="container">
@@ -411,7 +460,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </div>
-
 <!-- SERVICES -->
 <section id="ydelser" class="section-pad">
   <div class="container">
@@ -438,13 +486,12 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
-<!-- PACKAGES -->
+<!-- PACKAGES - WITH CLICK SELECTION -->
 <section id="pakker" class="section-pad">
   <div class="container">
     <div class="section-header anim"><span class="section-label">Privat Rengøring</span><h2 class="section-title">Vælg den rette pakke</h2><p class="section-subtitle">Tre niveauer af professionel rengøring — fra let vedligeholdelse til dybdegående hovedrengøring.</p></div>
-    <div class="packages-grid">
-      <div class="package-card anim">
+    <div class="packages-grid" id="packagesGrid">
+      <div class="package-card anim" data-package="let" onclick="selectPackage('let')">
         <span class="package-name">Let</span><h3 class="package-title">Vedligeholdelse</h3><p class="package-desc">Til det vedligeholdte hjem der trænger til ugentlig opfriskning.</p>
         <ul class="package-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Støvsugning af alle gulve</li>
@@ -456,7 +503,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
         </ul>
         <a href="#prisberegner" class="btn btn-outline package-btn" style="border-color:rgba(255,255,255,.15);color:#fff">Beregn pris</a>
       </div>
-      <div class="package-card featured anim">
+      <div class="package-card featured anim selected" data-package="grundig" onclick="selectPackage('grundig')">
         <span class="package-name">Grundig</span><h3 class="package-title">Ekstra detaljer</h3><p class="package-desc">Alt fra LET plus ekstra opmærksomhed på detaljer og skjulte hjørner.</p>
         <ul class="package-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Alt fra LET rengøring</li>
@@ -468,7 +515,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
         </ul>
         <a href="#prisberegner" class="btn btn-primary package-btn">Beregn pris</a>
       </div>
-      <div class="package-card anim">
+      <div class="package-card anim" data-package="hoved" onclick="selectPackage('hoved')">
         <span class="package-name">Hoved</span><h3 class="package-title">Total nulstilling</h3><p class="package-desc">Den ultimative dybderengøring — perfekt til flytning, renovering eller forårsrengøring.</p>
         <ul class="package-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Alt fra GRUNDIG rengøring</li>
@@ -483,7 +530,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
 <!-- PRICE CALCULATOR -->
 <section id="prisberegner" class="section-pad">
   <div class="container">
@@ -500,8 +546,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
         <div class="form-group"><label>Frekvens</label><select id="calcFreq"><option value="ugentlig">Ugentlig</option><option value="14-daglig" selected>Hver 14. dag</option><option value="maanedlig">Månedlig</option><option value="engangs">Engangsrengøring</option></select></div>
         <div class="form-group"><label>Ekstra tilkøb</label>
           <div class="checkbox-group" id="calcExtras">
-            <label onclick="this.classList.toggle('checked')"><input type="checkbox" value="150"><span>Ovn (+150 kr)</span></label>
-            <label onclick="this.classList.toggle('checked')"><input type="checkbox" value="150"><span>Køleskab (+150 kr)</span></label>
+            <label onclick="this.classList.toggle('checked')"><input type="checkbox" value="250"><span>Ovn (+250 kr)</span></label>
+            <label onclick="this.classList.toggle('checked')"><input type="checkbox" value="250"><span>Køleskab (+250 kr)</span></label>
             <label onclick="this.classList.toggle('checked')"><input type="checkbox" value="75"><span>Sengetøj (+75 kr)</span></label>
             <label onclick="this.classList.toggle('checked')"><input type="checkbox" value="100"><span>Oven på skabe (+100 kr)</span></label>
             <label onclick="this.classList.toggle('checked')"><input type="checkbox" value="50"><span>Opvask (+50 kr)</span></label>
@@ -519,7 +565,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
 <!-- USPs -->
 <section id="fordele" class="section-pad">
   <div class="container">
@@ -534,7 +579,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
 <!-- SERVICEFRADRAG -->
 <section id="servicefradrag" class="section-pad">
   <div class="container">
@@ -557,7 +601,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
 <!-- TESTIMONIALS -->
 <section id="anmeldelser" class="section-pad">
   <div class="container">
@@ -582,7 +625,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     <div class="trustpilot-bar anim"><div class="tp-stars">★★★★★</div><div class="rating">4.9 / 5.0</div><div class="rating-label">Baseret på kundeanmeldelser · Trustpilot</div></div>
   </div>
 </section>
-
 <!-- BOOKING -->
 <section id="booking" class="section-pad">
   <div class="container">
@@ -610,7 +652,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
 <!-- FAQ -->
 <section id="faq" class="section-pad">
   <div class="container">
@@ -618,7 +659,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     <div class="faq-grid" id="faqGrid"></div>
   </div>
 </section>
-
 <!-- MAP -->
 <section id="omraade" class="section-pad">
   <div class="container">
@@ -632,7 +672,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
 <!-- CONTACT -->
 <section id="kontakt" class="section-pad">
   <div class="container">
@@ -655,7 +694,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
@@ -671,7 +709,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     </div>
   </div>
 </footer>
-
 <!-- LIVE CHAT -->
 <div class="chat-widget">
   <div class="chat-window" id="chatWindow">
@@ -697,10 +734,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
     <span class="chat-dot"></span>
   </button>
 </div>
-
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></button>
 <div class="toast" id="toast"></div>
-
 <script>
 // ─── Scroll effects ───
 const navbar = document.getElementById('navbar');
@@ -709,7 +744,6 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
   backToTop.classList.toggle('visible', window.scrollY > 600);
 });
-
 // ─── Mobile menu ───
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -721,7 +755,6 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   hamburger.classList.remove('active');
   navLinks.classList.remove('open');
 }));
-
 // ─── Scroll animations ───
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
@@ -732,6 +765,35 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+// ═══ PACKAGE SELECTION FUNCTION - NEW! ═══
+function selectPackage(packageType) {
+  // Remove 'selected' class from all packages
+  document.querySelectorAll('.package-card').forEach(card => {
+    card.classList.remove('selected');
+  });
+  
+  // Add 'selected' class to clicked package
+  const selectedCard = document.querySelector(`[data-package="${packageType}"]`);
+  if (selectedCard) {
+    selectedCard.classList.add('selected');
+  }
+  
+  // Update calculator dropdown to match selection
+  const calcPackage = document.getElementById('calcPackage');
+  if (calcPackage) {
+    calcPackage.value = packageType;
+    calcPrice(); // Recalculate price
+  }
+  
+  // Smooth scroll to calculator
+  const calculator = document.getElementById('prisberegner');
+  if (calculator) {
+    setTimeout(() => {
+      calculator.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+  }
+}
 
 // ─── FAQ ───
 const faqData = [
@@ -758,7 +820,6 @@ function toggleFaq(btn) {
   document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
   if (!wasActive) item.classList.add('active');
 }
-
 // ─── Area list ───
 const areas = ['Hørsholm','Rungsted','Fredensborg','Humlebæk','Helsingør','Birkerød','Holte','Virum','Lyngby','Hillerød','Allerød','Kokkedal'];
 const areaList = document.getElementById('areaList');
@@ -767,12 +828,10 @@ areas.forEach(a => {
   li.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${a}`;
   areaList.appendChild(li);
 });
-
 // ─── Price Calculator ───
 const basePrices = { let: 8, grundig: 12, hoved: 20 };
 const freqMultipliers = { ugentlig: 0.85, '14-daglig': 1, maanedlig: 1.1, engangs: 1.25 };
 const typeMultipliers = { privat: 1, erhverv: 1.2, vinduer: 0.6 };
-
 function calcPrice() {
   const type = document.getElementById('calcType').value;
   const pkg = document.getElementById('calcPackage').value;
@@ -780,43 +839,34 @@ function calcPrice() {
   const bathrooms = parseInt(document.getElementById('calcBathrooms').value) || 2;
   const freq = document.getElementById('calcFreq').value;
   const isNew = document.getElementById('calcNewCustomer').checked;
-
   document.getElementById('calcPackageGroup').style.display = type === 'privat' ? 'block' : 'none';
-
   const base = (type === 'privat' ? basePrices[pkg] : (type === 'erhverv' ? 10 : 6)) * size;
   const bathroomCost = bathrooms * 150;
   const freqMult = freqMultipliers[freq] || 1;
   const typeMult = typeMultipliers[type] || 1;
-
   let extras = 0;
   document.querySelectorAll('#calcExtras input:checked').forEach(cb => extras += parseInt(cb.value));
-
   let subtotal = Math.round((base + bathroomCost) * freqMult * typeMult + extras);
   const discount = isNew ? Math.round(subtotal * 0.2) : 0;
   const total = subtotal - discount;
-
   const labels = { privat: 'Privat rengøring', erhverv: 'Erhvervsrengøring', vinduer: 'Vinduespudsning' };
   const pkgLabels = { let: 'LET', grundig: 'GRUNDIG', hoved: 'HOVED' };
   const freqLabels = { ugentlig: 'Ugentlig', '14-daglig': 'Hver 14. dag', maanedlig: 'Månedlig', engangs: 'Engang' };
-
   let html = `<div class="result-line"><span>${labels[type]}${type === 'privat' ? ' · ' + pkgLabels[pkg] : ''}</span><span>${size} m²</span></div>`;
   html += `<div class="result-line"><span>Badeværelser</span><span>${bathrooms} stk.</span></div>`;
   html += `<div class="result-line"><span>Frekvens</span><span>${freqLabels[freq]}</span></div>`;
   if (extras > 0) html += `<div class="result-line"><span>Ekstra tilkøb</span><span>+${extras} kr</span></div>`;
   html += `<div class="result-line"><span>Subtotal</span><span>${subtotal.toLocaleString('da-DK')} kr</span></div>`;
   if (discount > 0) html += `<div class="result-line discount"><span>Ny-kunderabat (20%)</span><span>-${discount.toLocaleString('da-DK')} kr</span></div>`;
-
   document.getElementById('resultBreakdown').innerHTML = html;
   document.getElementById('resultTotal').innerHTML = `${total.toLocaleString('da-DK')}<small> kr/gang</small>`;
 }
-
 ['calcType','calcPackage','calcSize','calcBathrooms','calcFreq','calcNewCustomer'].forEach(id => {
   document.getElementById(id).addEventListener('change', calcPrice);
   document.getElementById(id).addEventListener('input', calcPrice);
 });
 document.querySelectorAll('#calcExtras input').forEach(cb => cb.addEventListener('change', calcPrice));
 calcPrice();
-
 // ─── Toast ───
 function showToast(msg) {
   const t = document.getElementById('toast');
@@ -824,12 +874,10 @@ function showToast(msg) {
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 4000);
 }
-
 // ─── Chat ───
 function toggleChat() {
   document.getElementById('chatWindow').classList.toggle('open');
 }
-
 const chatResponses = {
   'Hvad koster rengøring?': 'Priserne afhænger af boligens størrelse, pakkeniveau og frekvens. En typisk rengøring af 100 m² starter fra ca. 800-1.200 kr. Brug vores <a href="#prisberegner" style="color:var(--accent)">prisberegner</a> for et hurtigt estimat! Husk: som ny kunde får du 20% rabat.',
   'Jeg vil booke': 'Super! Du kan booke direkte via vores <a href="#booking" style="color:var(--accent)">bookingformular</a>, eller ring til os på 42 34 40 00. Vi vender altid tilbage inden for 24 timer.',
@@ -837,7 +885,6 @@ const chatResponses = {
   'Fortæl om tilfredsgaranti': 'Vi tilbyder 100% tilfredshedsgaranti. Hvis du ikke er tilfreds med rengøringen, kommer vi igen og retter op — helt uden ekstra omkostninger. Vi mener det! En aftale er en aftale.',
 };
 const defaultResponse = 'Tak for din besked! En af vores medarbejdere vil svare dig snarest. Du er også velkommen til at ringe på 42 34 40 00 (Man–Fre 09–20, Lør–Søn 11–15).';
-
 function addChatMessage(text, isUser) {
   const msg = document.createElement('div');
   msg.className = `chat-message ${isUser ? 'user' : 'bot'}`;
@@ -847,14 +894,12 @@ function addChatMessage(text, isUser) {
   document.getElementById('chatMessages').appendChild(msg);
   msg.scrollIntoView({ behavior: 'smooth' });
 }
-
 function sendQuickReply(btn) {
   const text = btn.textContent;
   addChatMessage(text, true);
   document.getElementById('chatQuickReplies').style.display = 'none';
   setTimeout(() => addChatMessage(chatResponses[text] || defaultResponse, false), 800);
 }
-
 function sendChatMessage() {
   const input = document.getElementById('chatInput');
   const text = input.value.trim();
