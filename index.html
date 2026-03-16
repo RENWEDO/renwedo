@@ -213,7 +213,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 .anim.visible{opacity:1;transform:translateY(0)}
 .topbar{background:var(--bg-dark);color:var(--text-muted);font-size:.75rem;padding:8px 0;letter-spacing:.03em}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.topbar a{color:var(--accent);text-decoration:none}
+.topbar a{color:var(--accent);text-decoration:none}.email-protected{color:inherit;cursor:pointer}
 .topbar a:hover{text-decoration:underline}
 .topbar-left,.topbar-right{display:flex;align-items:center;gap:16px}
 .topbar-right .badge{background:rgba(115,188,213,.12);color:var(--accent);padding:3px 10px;border-radius:20px;font-weight:600;font-size:.7rem}
@@ -469,7 +469,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 
 /* ═══ LEAD CAPTURE ═══ */
 .lead-capture { margin-top: 20px; border-top: 1px solid var(--border-light); padding-top: 20px; }
-.lead-capture-label { font-size: .82rem; font-weight: 600; color: var(--text-light); margin-bottom: 12px; }
+.lead-capture-label { font-size: .88rem; font-weight: 600; color: var(--text-light); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.lead-capture-label::before { content: "📨"; }
 .lead-fields { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
 .lead-input {
   width: 100%; padding: 12px 14px;
@@ -502,7 +503,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
   <div class="container">
     <div class="topbar-left">
       <span>📞 <a href="tel:+4542344000">42 34 40 00</a></span>
-      <span>✉️ <a href="/cdn-cgi/l/email-protection#452e2a2b31242e310537202b3220212a6b212e"><span class="__cf_email__" data-cfemail="c9a2a6a7bda8a2bd89bbaca7beacada6e7ada2">[email&#160;protected]</span></a></span>
+      <span>✉️ <a href="#" class="email-protected" data-u="kontakt" data-d="renwedo.dk" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d;return true;">kontakt@renwedo.dk</a></span>
     </div>
     <div class="topbar-right">
       <span class="badge">🌿 Svanemærkede produkter</span>
@@ -685,7 +686,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
             <span>Jeg giver tilladelse til at blive kontaktet med et tilbud</span>
           </label>
           <div id="leadError" class="lead-error" style="display:none">Udfyld venligst e-mail eller telefon og giv samtykke.</div>
-          <div id="leadSuccess" class="lead-success" style="display:none">✅ Tak! Vi kontakter dig inden for 24 timer.</div>
+          <div id="leadSuccess" class="lead-success" style="display:none">✅ Tilbuddet er sendt til din e-mail! Vi ringer dig op snarest.</div>
           <button class="btn btn-primary" id="leadSubmitBtn" style="width:100%;justify-content:center;margin-top:12px" onclick="submitLead()">
             <span id="leadBtnText">Få mit tilbud →</span>
             <div class="btn-spinner" id="leadSpinner" style="display:none"></div>
@@ -838,7 +839,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
       </form>
       <div class="contact-info-cards anim">
         <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><h4>Ring til os</h4><p><a href="tel:+4542344000">(+45) 42 34 40 00</a></p><p>Man–Fre: 09–20 · Lør–Søn: 11–15</p></div></div>
-        <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Skriv til os</h4><p><a href="/cdn-cgi/l/email-protection#046f6b6a70656f704476616a7361606b2a606f"><span class="__cf_email__" data-cfemail="1a7175746e7b716e5a687f746d7f7e75347e71">[email&#160;protected]</span></a></p><p>Svar altid inden for 24 timer</p></div></div>
+        <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Skriv til os</h4><p><a href="#" class="email-protected" data-u="kontakt" data-d="renwedo.dk" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d;return true;">kontakt@renwedo.dk</a></p><p>Svar altid inden for 24 timer</p></div></div>
         <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Find os</h4><p>2970 Hørsholm</p><p>Nordsjælland, Danmark</p></div></div>
         <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Åbningstider</h4><p>Mandag–Fredag: 09.00–20.00</p><p>Lørdag–Søndag: 11.00–15.00</p></div></div>
       </div>
@@ -852,7 +853,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
       <div class="footer-brand"><a href="#" class="logo">RENWEDO</a><p>Professionel rengøring i Hørsholm og Nordsjælland. Kvalitet, pålidelighed og tillid — med 100% tilfredshedsgaranti og svanemærkede produkter.</p></div>
       <div class="footer-col"><h4>Ydelser</h4><ul><li><a href="#pakker">Privat Rengøring Hørsholm</a></li><li><a href="#ydelser">Erhvervsrengøring</a></li><li><a href="#ydelser">Vinduespudsning Hørsholm</a></li><li><a href="#">Institutionsrengøring</a></li><li><a href="#">Trappevask</a></li><li><a href="#">Ejendomsservice</a></li></ul></div>
       <div class="footer-col"><h4>Information</h4><ul><li><a href="#prisberegner">Priser</a></li><li><a href="#servicefradrag">Servicefradrag</a></li><li><a href="#faq">FAQ</a></li><li><a href="#omraade">Dækningsområde</a></li><li><a href="#anmeldelser">Anmeldelser</a></li></ul></div>
-      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+4542344000">42 34 40 00</a></li><li><a href="/cdn-cgi/l/email-protection#43282c2d372228370331262d3426272c6d2728"><span class="__cf_email__" data-cfemail="751e1a1b01141e013507101b0210111a5b111e">[email&#160;protected]</span></a></li><li><a href="#kontakt">Kontaktformular</a></li><li><a href="#booking">Book rengøring</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+4542344000">42 34 40 00</a></li><li><a href="#" class="email-protected" data-u="kontakt" data-d="renwedo.dk" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d;return true;">kontakt@renwedo.dk</a></li><li><a href="#kontakt">Kontaktformular</a></li><li><a href="#booking">Book rengøring</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025–2026 RENWEDO · Professionel rengøring i Hørsholm & Nordsjælland</p>
@@ -900,58 +901,68 @@ async function submitLead() {
   const btnText = document.getElementById('leadBtnText');
   const spinner = document.getElementById('leadSpinner');
 
-  // Validation
   errEl.style.display = 'none';
   if ((!email && !phone) || !consent) {
+    errEl.textContent = 'Udfyld venligst e-mail eller telefon og giv samtykke.';
     errEl.style.display = 'block';
     return;
   }
 
-  // Get current price estimate
+  // Hent prisestimat og detaljer
   const priceEl = document.getElementById('resultTotal');
-  const currentPrice = priceEl ? priceEl.textContent : 'Ikke beregnet';
-  const calcType = document.getElementById('calcType');
-  const calcSize = document.getElementById('calcSize');
-  const calcFreq = document.getElementById('calcFreq');
+  const currentPrice = priceEl ? priceEl.textContent.trim() : 'Ikke beregnet';
+  const typeLabels = { privat: 'Privat rengøring', erhverv: 'Erhvervsrengøring', vinduer: 'Vinduespudsning' };
+  const freqLabels = { ugentlig: 'Ugentlig', '14-daglig': 'Hver 14. dag', maanedlig: 'Månedlig', engangs: 'Engangsrengøring' };
+  const pkgLabels = { let: 'LET – Vedligeholdelse', grundig: 'GRUNDIG – Ekstra detaljer', hoved: 'HOVED – Total nulstilling' };
+  const typeVal = typeLabels[document.getElementById('calcType').value] || '';
+  const pkgVal = pkgLabels[document.getElementById('calcPackage').value] || '';
+  const sizeVal = document.getElementById('calcSize').value + ' m²';
+  const freqVal = freqLabels[document.getElementById('calcFreq').value] || '';
+  const bathVal = document.getElementById('calcBathrooms').value + ' badeværelser';
 
-  // Loading state
-  btn.disabled = true;
-  btnText.style.display = 'none';
-  spinner.style.display = 'block';
+  btn.disabled = true; btnText.style.display = 'none'; spinner.style.display = 'block';
 
   try {
+    // Send notifikation til RENWEDO
     await emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.contactTemplateId, {
       from_name: 'Prisberegner lead',
       from_email: email || 'Ikke angivet',
       from_phone: phone || 'Ikke angivet',
-      subject: 'Nyt lead fra prisberegner',
-      message: `Nyt lead fra prisberegneren!
-
-E-mail: ${email || 'Ikke angivet'}
-Telefon: ${phone || 'Ikke angivet'}
-
-Prisestimat: ${currentPrice}
-Type: ${calcType ? calcType.value : ''}
-Størrelse: ${calcSize ? calcSize.value : ''} m²
-Frekvens: ${calcFreq ? calcFreq.value : ''}
-
-Kunden har givet samtykke til at blive kontaktet.`,
+      subject: 'Nyt lead fra prisberegneren – ' + currentPrice,
+      message: 'NYT LEAD FRA PRISBEREGNEREN\n\nE-mail: ' + (email || 'Ikke angivet') + '\nTelefon: ' + (phone || 'Ikke angivet') + '\n\nPrisestimat: ' + currentPrice + '\nType: ' + typeVal + '\nPakke: ' + pkgVal + '\nStørrelse: ' + sizeVal + '\nBadeværelser: ' + bathVal + '\nFrekvens: ' + freqVal + '\n\nKunden har givet samtykke til at blive kontaktet.',
       to_email: 'kontakt@renwedo.dk'
     });
 
+    // Send tilbud til kunden hvis email er angivet
+    if (email) {
+      await emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.bookingTemplateId, {
+        from_name: 'RENWEDO',
+        from_email: 'kontakt@renwedo.dk',
+        from_phone: '42 34 40 00',
+        service_type: typeVal,
+        preferred_date: 'Vi kontakter dig snarest',
+        address: 'Følges op ved kontakt',
+        square_meters: sizeVal,
+        frequency: freqVal,
+        name: email,
+        email: email,
+        phone: phone || 'Ikke angivet',
+        to_email: email,
+        message: 'Hej!\n\nTak fordi du brugte vores prisberegner. Her er dit personlige prisestimat:\n\nEstimeret pris: ' + currentPrice + '\nType: ' + typeVal + '\nPakke: ' + pkgVal + '\nStørrelse: ' + sizeVal + '\nBadeværelser: ' + bathVal + '\nFrekvens: ' + freqVal + '\n\nPrisen er vejledende. Vi ringer dig op snarest for at bekræfte og aftale dato.\n\nHar du spørgsmål er du velkommen til at ringe på 42 34 40 00.\n\nMed venlig hilsen\nRENWEDO – Professionel rengøring i Hørsholm & Nordsjælland'
+      });
+    }
+
     successEl.style.display = 'block';
-    // Google Ads conversion tracking
-    gtag('event', 'conversion', {'send_to': 'AW-18018061284/-98dCO2elIkcEOSX149D'});
     document.getElementById('leadEmail').value = '';
     document.getElementById('leadPhone').value = '';
     document.getElementById('leadConsent').checked = false;
+    if (typeof gtag === 'function') gtag('event', 'conversion', {'send_to': 'AW-18018061284/-98dCO2elIkcEOSX149D'});
   } catch(err) {
+    console.error(err);
     errEl.textContent = 'Fejl ved afsendelse — ring til os på 42 34 40 00.';
     errEl.style.display = 'block';
   } finally {
-    btn.disabled = false;
-    btnText.style.display = 'inline';
-    spinner.style.display = 'none';
+    btn.disabled = false; btnText.style.display = 'inline'; spinner.style.display = 'none';
   }
 }
 
