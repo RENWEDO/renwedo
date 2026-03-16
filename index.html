@@ -2,6 +2,14 @@
 <html lang="da">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18018061284"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18018061284');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ═══ SEO: TITLE (vigtigste element) ═══ -->
@@ -458,6 +466,35 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 @media(max-width:1024px){.hero .container{grid-template-columns:1fr;gap:40px}.hero h1{font-size:2.8rem}.services-grid,.packages-grid,.testimonials-grid,.usp-grid{grid-template-columns:1fr 1fr}.calc-wrapper,.tax-content,.booking-wrapper,.map-wrapper,.contact-grid{grid-template-columns:1fr}.calc-result{position:relative;top:0}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.section-pad{padding:60px 0}.section-title{font-size:1.8rem}.section-subtitle{font-size:.95rem}.container{padding:0 20px}.topbar{font-size:.7rem;padding:6px 0}.topbar .container{gap:6px}.topbar-left,.topbar-right{gap:12px}.topbar-right{display:none}.navbar .container{height:64px}.logo{font-size:1.3rem}.nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(20,20,19,.98);padding:24px;gap:20px;border-bottom:1px solid var(--border-light)}.hamburger{display:flex}.hero{min-height:auto;padding:60px 0}.hero h1{font-size:2rem;line-height:1.15}.hero p{font-size:1rem;margin-bottom:28px}.hero-buttons{flex-direction:column;width:100%}.hero-buttons .btn{width:100%;justify-content:center}.hero-stats{grid-template-columns:1fr 1fr;gap:16px}.hero-stat{padding:16px}.hero-stat .number{font-size:1.8rem}.hero-stat .label{font-size:.7rem}.hero-floating-badge{position:relative;bottom:0;right:0;display:inline-block;margin-top:16px;font-size:.8rem;padding:12px 18px}.trust-bar{padding:28px 0}.trust-items{gap:24px;justify-content:flex-start}.trust-item{font-size:.75rem}.trust-item svg{width:16px;height:16px}.services-grid,.packages-grid,.testimonials-grid,.usp-grid{grid-template-columns:1fr;gap:20px}.package-card{padding:32px 24px}.package-card.featured::before{font-size:.68rem;padding:5px 16px}.form-row{grid-template-columns:1fr}.calc-form,.booking-form,.contact-form{padding:28px 20px}.calc-result{padding:28px 20px}.tax-visual{padding:28px 20px}.tax-highlight .big-number{font-size:2.2rem}.testimonial-card{padding:24px 20px}.map-container{height:300px}.area-list{grid-template-columns:1fr}.footer{padding:40px 0 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;text-align:center}.chat-window{width:calc(100vw - 32px);height:calc(100vh - 120px);max-height:600px;right:-12px}.chat-toggle{width:54px;height:54px;bottom:20px;right:20px}.chat-toggle svg{width:22px;height:22px}.back-to-top{bottom:85px;right:20px;width:40px;height:40px}}
 @media(max-width:480px){.hero h1{font-size:1.7rem}.section-title{font-size:1.6rem}.hero-stats{grid-template-columns:1fr;gap:12px}.package-card{padding:24px 18px}.service-card{padding:28px 20px}.usp-card{padding:24px 18px}}
+
+/* ═══ LEAD CAPTURE ═══ */
+.lead-capture { margin-top: 20px; border-top: 1px solid var(--border-light); padding-top: 20px; }
+.lead-capture-label { font-size: .82rem; font-weight: 600; color: var(--text-light); margin-bottom: 12px; }
+.lead-fields { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+.lead-input {
+  width: 100%; padding: 12px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: rgba(255,255,255,.07);
+  color: var(--text-light);
+  font-family: 'Montserrat', sans-serif;
+  font-size: .88rem;
+  outline: none;
+  transition: border-color .2s;
+}
+.lead-input::placeholder { color: rgba(255,255,255,.3); }
+.lead-input:focus { border-color: var(--accent); }
+.lead-consent {
+  display: flex; align-items: flex-start; gap: 10px;
+  cursor: pointer; margin-bottom: 8px;
+}
+.lead-consent input { 
+  margin-top: 3px; width: 16px; height: 16px; 
+  accent-color: var(--accent); flex-shrink: 0; cursor: pointer;
+}
+.lead-consent span { font-size: .78rem; color: rgba(255,255,255,.55); line-height: 1.5; }
+.lead-error { font-size: .78rem; color: #ff6b6b; margin-top: 4px; }
+.lead-success { font-size: .85rem; color: #4ecb71; margin-top: 4px; font-weight: 500; }
 </style>
 </head>
 <body>
@@ -465,7 +502,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
   <div class="container">
     <div class="topbar-left">
       <span>📞 <a href="tel:+4542344000">42 34 40 00</a></span>
-      <span>✉️ <a href="mailto:kontakt@renwedo.dk">kontakt@renwedo.dk</a></span>
+      <span>✉️ <a href="/cdn-cgi/l/email-protection#452e2a2b31242e310537202b3220212a6b212e"><span class="__cf_email__" data-cfemail="c9a2a6a7bda8a2bd89bbaca7beacada6e7ada2">[email&#160;protected]</span></a></span>
     </div>
     <div class="topbar-right">
       <span class="badge">🌿 Svanemærkede produkter</span>
@@ -635,7 +672,25 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
         <div class="result-breakdown" id="resultBreakdown"></div>
         <div class="result-total"><span class="label">Estimeret pris</span><span class="amount" id="resultTotal">—<small> kr/gang</small></span></div>
         <div class="result-note"><strong>Servicefradrag:</strong> I 2025 kan du trække op til 17.500 kr. pr. person fra i skat, svarende til op til 26% besparelse.</div>
-        <a href="#booking" class="btn btn-primary" style="width:100%;justify-content:center">Book med denne pris <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+
+        <!-- LEAD CAPTURE -->
+        <div class="lead-capture" id="leadCapture">
+          <p class="lead-capture-label">Få tilbuddet sendt direkte til dig</p>
+          <div class="lead-fields">
+            <input type="email" id="leadEmail" placeholder="Din e-mail" class="lead-input">
+            <input type="tel" id="leadPhone" placeholder="Dit telefonnummer" class="lead-input">
+          </div>
+          <label class="lead-consent" id="leadConsentLabel">
+            <input type="checkbox" id="leadConsent">
+            <span>Jeg giver tilladelse til at blive kontaktet med et tilbud</span>
+          </label>
+          <div id="leadError" class="lead-error" style="display:none">Udfyld venligst e-mail eller telefon og giv samtykke.</div>
+          <div id="leadSuccess" class="lead-success" style="display:none">✅ Tak! Vi kontakter dig inden for 24 timer.</div>
+          <button class="btn btn-primary" id="leadSubmitBtn" style="width:100%;justify-content:center;margin-top:12px" onclick="submitLead()">
+            <span id="leadBtnText">Få mit tilbud →</span>
+            <div class="btn-spinner" id="leadSpinner" style="display:none"></div>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -783,7 +838,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
       </form>
       <div class="contact-info-cards anim">
         <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><h4>Ring til os</h4><p><a href="tel:+4542344000">(+45) 42 34 40 00</a></p><p>Man–Fre: 09–20 · Lør–Søn: 11–15</p></div></div>
-        <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Skriv til os</h4><p><a href="mailto:kontakt@renwedo.dk">kontakt@renwedo.dk</a></p><p>Svar altid inden for 24 timer</p></div></div>
+        <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Skriv til os</h4><p><a href="/cdn-cgi/l/email-protection#046f6b6a70656f704476616a7361606b2a606f"><span class="__cf_email__" data-cfemail="1a7175746e7b716e5a687f746d7f7e75347e71">[email&#160;protected]</span></a></p><p>Svar altid inden for 24 timer</p></div></div>
         <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Find os</h4><p>2970 Hørsholm</p><p>Nordsjælland, Danmark</p></div></div>
         <div class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Åbningstider</h4><p>Mandag–Fredag: 09.00–20.00</p><p>Lørdag–Søndag: 11.00–15.00</p></div></div>
       </div>
@@ -797,7 +852,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
       <div class="footer-brand"><a href="#" class="logo">RENWEDO</a><p>Professionel rengøring i Hørsholm og Nordsjælland. Kvalitet, pålidelighed og tillid — med 100% tilfredshedsgaranti og svanemærkede produkter.</p></div>
       <div class="footer-col"><h4>Ydelser</h4><ul><li><a href="#pakker">Privat Rengøring Hørsholm</a></li><li><a href="#ydelser">Erhvervsrengøring</a></li><li><a href="#ydelser">Vinduespudsning Hørsholm</a></li><li><a href="#">Institutionsrengøring</a></li><li><a href="#">Trappevask</a></li><li><a href="#">Ejendomsservice</a></li></ul></div>
       <div class="footer-col"><h4>Information</h4><ul><li><a href="#prisberegner">Priser</a></li><li><a href="#servicefradrag">Servicefradrag</a></li><li><a href="#faq">FAQ</a></li><li><a href="#omraade">Dækningsområde</a></li><li><a href="#anmeldelser">Anmeldelser</a></li></ul></div>
-      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+4542344000">42 34 40 00</a></li><li><a href="mailto:kontakt@renwedo.dk">kontakt@renwedo.dk</a></li><li><a href="#kontakt">Kontaktformular</a></li><li><a href="#booking">Book rengøring</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+4542344000">42 34 40 00</a></li><li><a href="/cdn-cgi/l/email-protection#43282c2d372228370331262d3426272c6d2728"><span class="__cf_email__" data-cfemail="751e1a1b01141e013507101b0210111a5b111e">[email&#160;protected]</span></a></li><li><a href="#kontakt">Kontaktformular</a></li><li><a href="#booking">Book rengøring</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025–2026 RENWEDO · Professionel rengøring i Hørsholm & Nordsjælland</p>
@@ -833,7 +888,74 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg-light);color:var(--
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></button>
 <div class="toast" id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+// ─── Lead capture fra prisberegner ───
+async function submitLead() {
+  const email = document.getElementById('leadEmail').value.trim();
+  const phone = document.getElementById('leadPhone').value.trim();
+  const consent = document.getElementById('leadConsent').checked;
+  const errEl = document.getElementById('leadError');
+  const successEl = document.getElementById('leadSuccess');
+  const btn = document.getElementById('leadSubmitBtn');
+  const btnText = document.getElementById('leadBtnText');
+  const spinner = document.getElementById('leadSpinner');
+
+  // Validation
+  errEl.style.display = 'none';
+  if ((!email && !phone) || !consent) {
+    errEl.style.display = 'block';
+    return;
+  }
+
+  // Get current price estimate
+  const priceEl = document.getElementById('resultTotal');
+  const currentPrice = priceEl ? priceEl.textContent : 'Ikke beregnet';
+  const calcType = document.getElementById('calcType');
+  const calcSize = document.getElementById('calcSize');
+  const calcFreq = document.getElementById('calcFreq');
+
+  // Loading state
+  btn.disabled = true;
+  btnText.style.display = 'none';
+  spinner.style.display = 'block';
+
+  try {
+    await emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.contactTemplateId, {
+      from_name: 'Prisberegner lead',
+      from_email: email || 'Ikke angivet',
+      from_phone: phone || 'Ikke angivet',
+      subject: 'Nyt lead fra prisberegner',
+      message: `Nyt lead fra prisberegneren!
+
+E-mail: ${email || 'Ikke angivet'}
+Telefon: ${phone || 'Ikke angivet'}
+
+Prisestimat: ${currentPrice}
+Type: ${calcType ? calcType.value : ''}
+Størrelse: ${calcSize ? calcSize.value : ''} m²
+Frekvens: ${calcFreq ? calcFreq.value : ''}
+
+Kunden har givet samtykke til at blive kontaktet.`,
+      to_email: 'kontakt@renwedo.dk'
+    });
+
+    successEl.style.display = 'block';
+    // Google Ads conversion tracking
+    gtag('event', 'conversion', {'send_to': 'AW-18018061284/-98dCO2elIkcEOSX149D'});
+    document.getElementById('leadEmail').value = '';
+    document.getElementById('leadPhone').value = '';
+    document.getElementById('leadConsent').checked = false;
+  } catch(err) {
+    errEl.textContent = 'Fejl ved afsendelse — ring til os på 42 34 40 00.';
+    errEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btnText.style.display = 'inline';
+    spinner.style.display = 'none';
+  }
+}
+
+</script><script>
 const EMAILJS_CONFIG = {
   publicKey: '-4-ipq9Xh_YNmegRr',
   serviceId: 'service_2nyzy8c',
@@ -858,6 +980,8 @@ document.getElementById('bookingForm').addEventListener('submit', async function
       frequency: formData.get('frequency'), message: formData.get('message') || 'Ingen besked', to_email: 'kontakt@renwedo.dk'
     });
     showToast('✅ Tak for din booking! Vi vender tilbage inden for 24 timer.', 'success');
+    // Google Ads conversion tracking
+    gtag('event', 'conversion', {'send_to': 'AW-18018061284/-98dCO2elIkcEOSX149D'});
     this.reset();
   } catch (error) {
     showToast('❌ Fejl ved afsendelse. Prøv igen eller ring til os på 42 34 40 00.', 'error');
@@ -880,6 +1004,8 @@ document.getElementById('contactForm').addEventListener('submit', async function
       subject: formData.get('subject'), message: formData.get('message'), to_email: 'kontakt@renwedo.dk'
     });
     showToast('✅ Tak for din besked! Vi vender tilbage inden for 24 timer.', 'success');
+    // Google Ads conversion tracking
+    gtag('event', 'conversion', {'send_to': 'AW-18018061284/-98dCO2elIkcEOSX149D'});
     this.reset();
   } catch (error) {
     showToast('❌ Fejl ved afsendelse. Prøv igen eller ring til os på 42 34 40 00.', 'error');
@@ -1024,11 +1150,4 @@ function sendChatMessage() {
   else if (lower.includes('book') || lower.includes('bestil')) response = chatResponses['Jeg vil booke'];
   else if (lower.includes('område') || lower.includes('dæk') || lower.includes('hørsholm')) response = chatResponses['Dækker I mit område?'];
   else if (lower.includes('garanti') || lower.includes('tilfred')) response = chatResponses['Fortæl om tilfredsgaranti'];
-  else if (lower.includes('binding')) response = 'Der er ingen bindingsperiode. Du kan opsige når som helst.';
-  else if (lower.includes('svanem') || lower.includes('miljø')) response = 'Vi bruger udelukkende svanemærkede produkter for et sundt indeklima.';
-  else if (lower.includes('fradrag') || lower.includes('skat')) response = 'I 2025 kan du trække op til 17.500 kr. pr. person fra i skat — op til 26% besparelse!';
-  setTimeout(() => addChatMessage(response, false), 800);
-}
-</script>
-</body>
-</html>
+  else
